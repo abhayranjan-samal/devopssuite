@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Automation Suite - Generate, Validate, and Deploy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__brand">
+                    <h1 class="brand-logo">DevOps Suite</h1>
+                    <span class="brand-tagline">Generate, Validate, and Deploy</span>
+                </div>
+                <ul class="nav__menu">
+                    <li><a href="#home" data-nav="home">Home</a></li>
+                    <li><a href="#kubernetes" data-nav="kubernetes">Kubernetes</a></li>
+                    <li><a href="#cicd" data-nav="cicd">CI/CD</a></li>
+                    <li><a href="#iac" data-nav="iac">Infrastructure</a></li>
+                    <li><a href="#shell" data-nav="shell">Shell Tools</a></li>
+                    <li><a href="#templates" data-nav="templates">Templates</a></li>
+                    <li><a href="#docs" data-nav="docs">Documentation</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="theme-toggle" title="Toggle theme">🌓</button>
+                    <button class="nav__toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="hero section active">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">DevOps Automation Suite</h1>
+                    <p class="hero__subtitle">Generate, Validate, and Deploy - Your Complete DevOps Toolkit</p>
+                    <p class="hero__description">
+                        Streamline your DevOps workflow with automated generation of Kubernetes configurations, 
+                        CI/CD pipelines, Infrastructure as Code templates, and shell scripts. Built for developers 
+                        and system administrators who value efficiency and best practices.
+                    </p>
+                    <div class="hero__actions">
+                        <button class="btn btn--primary" data-nav="kubernetes">Get Started</button>
+                        <button class="btn btn--outline" data-nav="docs">View Documentation</button>
+                    </div>
+                </div>
+                <div class="hero__features">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Real-time Generation</h3>
+                            <p>Generate configurations instantly with live preview and validation</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <h3>Best Practices</h3>
+                            <p>Built-in security and performance best practices for all templates</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <h3>Mobile Ready</h3>
+                            <p>Responsive design works perfectly on desktop and mobile devices</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Export & Deploy</h3>
+                            <p>Download files or copy to clipboard for immediate deployment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Categories Dashboard -->
+        <section class="tool-categories">
+            <div class="container">
+                <h2 class="section__title">Choose Your DevOps Tool</h2>
+                <div class="tools-grid">
+                    <div class="tool-card" data-tool="kubernetes">
+                        <div class="tool-card__icon">☸️</div>
+                        <h3>Kubernetes Tools</h3>
+                        <p>Generate Helm charts, Kubernetes YAML, and debug configurations</p>
+                        <ul class="tool-features">
+                            <li>Helm Chart Generator</li>
+                            <li>Kubernetes YAML Generator</li>
+                            <li>Helm Template Debugger</li>
+                        </ul>
+                        <button class="btn btn--primary" data-nav="kubernetes">Explore Tools</button>
+                    </div>
+                    <div class="tool-card" data-tool="cicd">
+                        <div class="tool-card__icon">🔄</div>
+                        <h3>CI/CD Tools</h3>
+                        <p>Build automated pipelines for GitHub Actions, GitLab, Jenkins</p>
+                        <ul class="tool-features">
+                            <li>GitHub Actions Generator</li>
+                            <li>GitLab CI/CD Generator</li>
+                            <li>Jenkins Pipeline Generator</li>
+                        </ul>
+                        <button class="btn btn--primary" data-nav="cicd">Explore Tools</button>
+                    </div>
+                    <div class="tool-card" data-tool="iac">
+                        <div class="tool-card__icon">🏗️</div>
+                        <h3>Infrastructure as Code</h3>
+                        <p>Generate Ansible playbooks, Terraform modules, and CloudFormation</p>
+                        <ul class="tool-features">
+                            <li>Ansible Playbook Generator</li>
+                            <li>Terraform Generator</li>
+                            <li>CloudFormation Generator</li>
+                        </ul>
+                        <button class="btn btn--primary" data-nav="iac">Explore Tools</button>
+                    </div>
+                    <div class="tool-card" data-tool="shell">
+                        <div class="tool-card__icon">💻</div>
+                        <h3>Shell & Automation</h3>
+                        <p>Generate shell scripts, automation tasks, and system utilities</p>
+                        <ul class="tool-features">
+                            <li>Bash Script Generator</li>
+                            <li>PowerShell Generator</li>
+                            <li>System Admin Scripts</li>
+                        </ul>
+                        <button class="btn btn--primary" data-nav="shell">Explore Tools</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kubernetes Tools Section -->
+        <section id="kubernetes" class="section generator-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Kubernetes Tools</h2>
+                    <p class="section__subtitle">Generate production-ready Kubernetes configurations and Helm charts</p>
+                </div>
+                <div class="generator-tabs">
+                    <button class="tab-btn active" data-tab="helm-chart">Helm Chart</button>
+                    <button class="tab-btn" data-tab="k8s-yaml">Kubernetes YAML</button>
+                    <button class="tab-btn" data-tab="helm-debug">Helm Debugger</button>
+                </div>
+                <div class="generator-content">
+                    <!-- Helm Chart Generator -->
+                    <div id="helm-chart" class="tab-content active">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>Helm Chart Configuration</h3>
+                                <form class="form" data-generator="helm-chart">
+                                    <div class="form-group">
+                                        <label class="form-label">Chart Name</label>
+                                        <input type="text" class="form-control" name="chartName" value="my-app" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Application Type</label>
+                                        <select class="form-control" name="appType">
+                                            <option value="deployment">Deployment</option>
+                                            <option value="statefulset">StatefulSet</option>
+                                            <option value="daemonset">DaemonSet</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Container Image</label>
+                                        <input type="text" class="form-control" name="image" value="nginx:latest" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Replicas</label>
+                                        <input type="number" class="form-control" name="replicas" value="3" min="1" max="10">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Service Type</label>
+                                        <select class="form-control" name="serviceType">
+                                            <option value="ClusterIP">ClusterIP</option>
+                                            <option value="NodePort">NodePort</option>
+                                            <option value="LoadBalancer">LoadBalancer</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Port</label>
+                                        <input type="number" class="form-control" name="port" value="80" min="1" max="65535">
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Helm Chart</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated Helm Chart</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="yaml" id="helm-chart-output"># Generated Helm Chart will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kubernetes YAML Generator -->
+                    <div id="k8s-yaml" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>Kubernetes Resource Configuration</h3>
+                                <form class="form" data-generator="k8s-yaml">
+                                    <div class="form-group">
+                                        <label class="form-label">Resource Type</label>
+                                        <select class="form-control" name="resourceType">
+                                            <option value="deployment">Deployment</option>
+                                            <option value="service">Service</option>
+                                            <option value="configmap">ConfigMap</option>
+                                            <option value="secret">Secret</option>
+                                            <option value="ingress">Ingress</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Resource Name</label>
+                                        <input type="text" class="form-control" name="resourceName" value="my-app" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Namespace</label>
+                                        <input type="text" class="form-control" name="namespace" value="default">
+                                    </div>
+                                    <div class="form-group deployment-specific">
+                                        <label class="form-label">Container Image</label>
+                                        <input type="text" class="form-control" name="image" value="nginx:latest">
+                                    </div>
+                                    <div class="form-group deployment-specific">
+                                        <label class="form-label">Replicas</label>
+                                        <input type="number" class="form-control" name="replicas" value="3" min="1" max="10">
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate YAML</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated Kubernetes YAML</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="yaml" id="k8s-yaml-output"># Generated Kubernetes YAML will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Helm Debugger -->
+                    <div id="helm-debug" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>Helm Template Debugger</h3>
+                                <form class="form" data-generator="helm-debug">
+                                    <div class="form-group">
+                                        <label class="form-label">Helm Template</label>
+                                        <textarea class="form-control" name="helmTemplate" rows="6" placeholder="Paste your Helm template here...">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+      - name: {{ .Values.name }}
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: {{ .Values.port }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Values (YAML)</label>
+                                        <textarea class="form-control" name="helmValues" rows="4" placeholder="Paste your values.yaml content here...">name: my-app
+replicas: 3
+image: nginx:latest
+port: 80</textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Debug Template</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Rendered Template</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="yaml" id="helm-debug-output"># Rendered Helm template will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CI/CD Tools Section -->
+        <section id="cicd" class="section generator-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">CI/CD Pipeline Tools</h2>
+                    <p class="section__subtitle">Generate automated CI/CD pipelines for your favorite platforms</p>
+                </div>
+                <div class="generator-tabs">
+                    <button class="tab-btn active" data-tab="github-actions">GitHub Actions</button>
+                    <button class="tab-btn" data-tab="gitlab-ci">GitLab CI/CD</button>
+                    <button class="tab-btn" data-tab="jenkins">Jenkins</button>
+                </div>
+                <div class="generator-content">
+                    <!-- GitHub Actions -->
+                    <div id="github-actions" class="tab-content active">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>GitHub Actions Workflow</h3>
+                                <form class="form" data-generator="github-actions">
+                                    <div class="form-group">
+                                        <label class="form-label">Workflow Name</label>
+                                        <input type="text" class="form-control" name="workflowName" value="CI/CD Pipeline" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Trigger Events</label>
+                                        <div class="checkbox-group">
+                                            <label><input type="checkbox" name="triggers" value="push" checked> Push</label>
+                                            <label><input type="checkbox" name="triggers" value="pull_request" checked> Pull Request</label>
+                                            <label><input type="checkbox" name="triggers" value="schedule"> Schedule</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Language/Framework</label>
+                                        <select class="form-control" name="language">
+                                            <option value="node">Node.js</option>
+                                            <option value="python">Python</option>
+                                            <option value="java">Java</option>
+                                            <option value="go">Go</option>
+                                            <option value="docker">Docker</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Include Docker Build</label>
+                                        <input type="checkbox" name="includeDocker" checked>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Deploy to</label>
+                                        <select class="form-control" name="deployTarget">
+                                            <option value="">No Deployment</option>
+                                            <option value="heroku">Heroku</option>
+                                            <option value="aws">AWS</option>
+                                            <option value="kubernetes">Kubernetes</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Workflow</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated GitHub Actions Workflow</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="yaml" id="github-actions-output"># Generated GitHub Actions workflow will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitLab CI/CD -->
+                    <div id="gitlab-ci" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>GitLab CI/CD Pipeline</h3>
+                                <form class="form" data-generator="gitlab-ci">
+                                    <div class="form-group">
+                                        <label class="form-label">Language/Framework</label>
+                                        <select class="form-control" name="language">
+                                            <option value="node">Node.js</option>
+                                            <option value="python">Python</option>
+                                            <option value="java">Java</option>
+                                            <option value="go">Go</option>
+                                            <option value="docker">Docker</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Stages</label>
+                                        <div class="checkbox-group">
+                                            <label><input type="checkbox" name="stages" value="build" checked> Build</label>
+                                            <label><input type="checkbox" name="stages" value="test" checked> Test</label>
+                                            <label><input type="checkbox" name="stages" value="deploy" checked> Deploy</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Docker Registry</label>
+                                        <input type="text" class="form-control" name="dockerRegistry" value="$CI_REGISTRY">
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Pipeline</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated GitLab CI/CD Pipeline</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="yaml" id="gitlab-ci-output"># Generated GitLab CI/CD pipeline will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jenkins -->
+                    <div id="jenkins" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>Jenkins Pipeline</h3>
+                                <form class="form" data-generator="jenkins">
+                                    <div class="form-group">
+                                        <label class="form-label">Pipeline Type</label>
+                                        <select class="form-control" name="pipelineType">
+                                            <option value="declarative">Declarative</option>
+                                            <option value="scripted">Scripted</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Agent</label>
+                                        <select class="form-control" name="agent">
+                                            <option value="any">any</option>
+                                            <option value="linux">linux</option>
+                                            <option value="docker">docker</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Language/Framework</label>
+                                        <select class="form-control" name="language">
+                                            <option value="node">Node.js</option>
+                                            <option value="python">Python</option>
+                                            <option value="java">Java</option>
+                                            <option value="maven">Maven</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Jenkinsfile</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated Jenkinsfile</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="groovy" id="jenkins-output">// Generated Jenkinsfile will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infrastructure as Code Section -->
+        <section id="iac" class="section generator-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Infrastructure as Code</h2>
+                    <p class="section__subtitle">Generate IaC templates for Ansible, Terraform, and CloudFormation</p>
+                </div>
+                <div class="generator-tabs">
+                    <button class="tab-btn active" data-tab="ansible">Ansible</button>
+                    <button class="tab-btn" data-tab="terraform">Terraform</button>
+                    <button class="tab-btn" data-tab="cloudformation">CloudFormation</button>
+                </div>
+                <div class="generator-content">
+                    <!-- Ansible -->
+                    <div id="ansible" class="tab-content active">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>Ansible Playbook</h3>
+                                <form class="form" data-generator="ansible">
+                                    <div class="form-group">
+                                        <label class="form-label">Playbook Name</label>
+                                        <input type="text" class="form-control" name="playbookName" value="Deploy Application" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Target Hosts</label>
+                                        <input type="text" class="form-control" name="hosts" value="webservers" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Tasks</label>
+                                        <div class="checkbox-group">
+                                            <label><input type="checkbox" name="tasks" value="install_packages" checked> Install Packages</label>
+                                            <label><input type="checkbox" name="tasks" value="copy_files" checked> Copy Files</label>
+                                            <label><input type="checkbox" name="tasks" value="start_services" checked> Start Services</label>
+                                            <label><input type="checkbox" name="tasks" value="setup_firewall"> Setup Firewall</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Remote User</label>
+                                        <input type="text" class="form-control" name="remoteUser" value="ubuntu">
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Playbook</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated Ansible Playbook</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="yaml" id="ansible-output"># Generated Ansible playbook will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terraform -->
+                    <div id="terraform" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>Terraform Configuration</h3>
+                                <form class="form" data-generator="terraform">
+                                    <div class="form-group">
+                                        <label class="form-label">Cloud Provider</label>
+                                        <select class="form-control" name="provider">
+                                            <option value="aws">AWS</option>
+                                            <option value="azure">Azure</option>
+                                            <option value="gcp">Google Cloud</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Resources</label>
+                                        <div class="checkbox-group">
+                                            <label><input type="checkbox" name="resources" value="vpc" checked> VPC/Network</label>
+                                            <label><input type="checkbox" name="resources" value="compute" checked> Compute Instance</label>
+                                            <label><input type="checkbox" name="resources" value="storage"> Storage</label>
+                                            <label><input type="checkbox" name="resources" value="database"> Database</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Instance Type</label>
+                                        <input type="text" class="form-control" name="instanceType" value="t3.micro">
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Terraform</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated Terraform Configuration</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="hcl" id="terraform-output"># Generated Terraform configuration will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CloudFormation -->
+                    <div id="cloudformation" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>CloudFormation Template</h3>
+                                <form class="form" data-generator="cloudformation">
+                                    <div class="form-group">
+                                        <label class="form-label">Template Description</label>
+                                        <input type="text" class="form-control" name="description" value="AWS Infrastructure Stack" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Resources</label>
+                                        <div class="checkbox-group">
+                                            <label><input type="checkbox" name="resources" value="vpc" checked> VPC</label>
+                                            <label><input type="checkbox" name="resources" value="ec2" checked> EC2 Instance</label>
+                                            <label><input type="checkbox" name="resources" value="s3"> S3 Bucket</label>
+                                            <label><input type="checkbox" name="resources" value="rds"> RDS Database</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Instance Type</label>
+                                        <select class="form-control" name="instanceType">
+                                            <option value="t3.micro">t3.micro</option>
+                                            <option value="t3.small">t3.small</option>
+                                            <option value="t3.medium">t3.medium</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Template</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated CloudFormation Template</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="json" id="cloudformation-output"># Generated CloudFormation template will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shell Tools Section -->
+        <section id="shell" class="section generator-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Shell & Automation Tools</h2>
+                    <p class="section__subtitle">Generate shell scripts and automation tools for system administration</p>
+                </div>
+                <div class="generator-tabs">
+                    <button class="tab-btn active" data-tab="bash">Bash Script</button>
+                    <button class="tab-btn" data-tab="powershell">PowerShell</button>
+                    <button class="tab-btn" data-tab="sysadmin">System Admin</button>
+                </div>
+                <div class="generator-content">
+                    <!-- Bash Script -->
+                    <div id="bash" class="tab-content active">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>Bash Script Generator</h3>
+                                <form class="form" data-generator="bash">
+                                    <div class="form-group">
+                                        <label class="form-label">Script Name</label>
+                                        <input type="text" class="form-control" name="scriptName" value="deployment-script" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Script Purpose</label>
+                                        <select class="form-control" name="purpose">
+                                            <option value="deployment">Deployment</option>
+                                            <option value="backup">Backup</option>
+                                            <option value="monitoring">Monitoring</option>
+                                            <option value="maintenance">System Maintenance</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Features</label>
+                                        <div class="checkbox-group">
+                                            <label><input type="checkbox" name="features" value="logging" checked> Logging</label>
+                                            <label><input type="checkbox" name="features" value="error_handling" checked> Error Handling</label>
+                                            <label><input type="checkbox" name="features" value="arguments" checked> Command Line Arguments</label>
+                                            <label><input type="checkbox" name="features" value="help"> Help Function</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Script</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated Bash Script</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="bash" id="bash-output"># Generated Bash script will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PowerShell -->
+                    <div id="powershell" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>PowerShell Script Generator</h3>
+                                <form class="form" data-generator="powershell">
+                                    <div class="form-group">
+                                        <label class="form-label">Script Name</label>
+                                        <input type="text" class="form-control" name="scriptName" value="System-Management" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Script Type</label>
+                                        <select class="form-control" name="scriptType">
+                                            <option value="function">Function</option>
+                                            <option value="cmdlet">Advanced Function (Cmdlet)</option>
+                                            <option value="script">Script</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Features</label>
+                                        <div class="checkbox-group">
+                                            <label><input type="checkbox" name="features" value="parameters" checked> Parameters</label>
+                                            <label><input type="checkbox" name="features" value="error_handling" checked> Error Handling</label>
+                                            <label><input type="checkbox" name="features" value="help" checked> Help Documentation</label>
+                                            <label><input type="checkbox" name="features" value="verbose"> Verbose Output</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Script</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated PowerShell Script</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="powershell" id="powershell-output"># Generated PowerShell script will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Admin -->
+                    <div id="sysadmin" class="tab-content">
+                        <div class="generator-layout">
+                            <div class="generator-form">
+                                <h3>System Admin Script Templates</h3>
+                                <form class="form" data-generator="sysadmin">
+                                    <div class="form-group">
+                                        <label class="form-label">Template Type</label>
+                                        <select class="form-control" name="templateType">
+                                            <option value="backup">Backup Script</option>
+                                            <option value="monitoring">System Monitoring</option>
+                                            <option value="user_management">User Management</option>
+                                            <option value="log_rotation">Log Rotation</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Operating System</label>
+                                        <select class="form-control" name="os">
+                                            <option value="linux">Linux</option>
+                                            <option value="windows">Windows</option>
+                                            <option value="macos">macOS</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Schedule Type</label>
+                                        <select class="form-control" name="schedule">
+                                            <option value="none">Manual Execution</option>
+                                            <option value="cron">Cron Job (Linux/macOS)</option>
+                                            <option value="task_scheduler">Task Scheduler (Windows)</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Generate Template</button>
+                                </form>
+                            </div>
+                            <div class="generator-output">
+                                <div class="output-header">
+                                    <h3>Generated System Admin Script</h3>
+                                    <div class="output-actions">
+                                        <button class="btn btn--sm btn--outline copy-btn">Copy</button>
+                                        <button class="btn btn--sm btn--outline download-btn">Download</button>
+                                    </div>
+                                </div>
+                                <div class="code-editor">
+                                    <pre><code class="bash" id="sysadmin-output"># Generated system admin script will appear here...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Templates Section -->
+        <section id="templates" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Template Library</h2>
+                    <p class="section__subtitle">Browse pre-built templates and examples for quick start</p>
+                </div>
+                <div class="template-categories">
+                    <div class="template-grid">
+                        <div class="template-card">
+                            <div class="template-card__header">
+                                <h3>Kubernetes Deployment</h3>
+                                <span class="template-tag">Kubernetes</span>
+                            </div>
+                            <p>Complete deployment configuration with service, ingress, and configmap</p>
+                            <button class="btn btn--outline template-btn" data-template="k8s-full-deployment">Use Template</button>
+                        </div>
+                        <div class="template-card">
+                            <div class="template-card__header">
+                                <h3>Node.js CI/CD</h3>
+                                <span class="template-tag">GitHub Actions</span>
+                            </div>
+                            <p>Complete Node.js build, test, and deployment pipeline</p>
+                            <button class="btn btn--outline template-btn" data-template="nodejs-cicd">Use Template</button>
+                        </div>
+                        <div class="template-card">
+                            <div class="template-card__header">
+                                <h3>AWS Infrastructure</h3>
+                                <span class="template-tag">Terraform</span>
+                            </div>
+                            <p>VPC, EC2, RDS, and S3 infrastructure setup</p>
+                            <button class="btn btn--outline template-btn" data-template="aws-infra">Use Template</button>
+                        </div>
+                        <div class="template-card">
+                            <div class="template-card__header">
+                                <h3>Server Deployment</h3>
+                                <span class="template-tag">Ansible</span>
+                            </div>
+                            <p>Complete server setup and application deployment</p>
+                            <button class="btn btn--outline template-btn" data-template="server-deployment">Use Template</button>
+                        </div>
+                        <div class="template-card">
+                            <div class="template-card__header">
+                                <h3>Backup Script</h3>
+                                <span class="template-tag">Bash</span>
+                            </div>
+                            <p>Automated backup script with rotation and compression</p>
+                            <button class="btn btn--outline template-btn" data-template="backup-script">Use Template</button>
+                        </div>
+                        <div class="template-card">
+                            <div class="template-card__header">
+                                <h3>System Monitor</h3>
+                                <span class="template-tag">PowerShell</span>
+                            </div>
+                            <p>System resource monitoring and alerting script</p>
+                            <button class="btn btn--outline template-btn" data-template="system-monitor">Use Template</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section id="docs" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Documentation</h2>
+                    <p class="section__subtitle">Learn how to use the DevOps Automation Suite effectively</p>
+                </div>
+                <div class="docs-content">
+                    <div class="docs-grid">
+                        <div class="docs-section">
+                            <h3>Getting Started</h3>
+                            <ul>
+                                <li><a href="#getting-started">Quick Start Guide</a></li>
+                                <li><a href="#navigation">Navigating the Interface</a></li>
+                                <li><a href="#generating">Generating Your First Configuration</a></li>
+                                <li><a href="#exporting">Exporting and Using Generated Files</a></li>
+                            </ul>
+                        </div>
+                        <div class="docs-section">
+                            <h3>Tool Guides</h3>
+                            <ul>
+                                <li><a href="#kubernetes-guide">Kubernetes Tools Guide</a></li>
+                                <li><a href="#cicd-guide">CI/CD Pipeline Guide</a></li>
+                                <li><a href="#iac-guide">Infrastructure as Code Guide</a></li>
+                                <li><a href="#shell-guide">Shell Scripting Guide</a></li>
+                            </ul>
+                        </div>
+                        <div class="docs-section">
+                            <h3>Best Practices</h3>
+                            <ul>
+                                <li><a href="#security">Security Best Practices</a></li>
+                                <li><a href="#performance">Performance Optimization</a></li>
+                                <li><a href="#maintenance">Maintenance and Updates</a></li>
+                                <li><a href="#troubleshooting">Troubleshooting Common Issues</a></li>
+                            </ul>
+                        </div>
+                        <div class="docs-section">
+                            <h3>Advanced Topics</h3>
+                            <ul>
+                                <li><a href="#custom-templates">Creating Custom Templates</a></li>
+                                <li><a href="#integration">Integration with Version Control</a></li>
+                                <li><a href="#automation">Advanced Automation Techniques</a></li>
+                                <li><a href="#api">API Reference</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>DevOps Automation Suite</h4>
+                    <p>Your complete toolkit for generating, validating, and deploying DevOps configurations.</p>
+                    <div class="footer__version">Version 1.0.0</div>
+                </div>
+                <div class="footer__section">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#kubernetes">Kubernetes</a></li>
+                        <li><a href="#cicd">CI/CD Pipelines</a></li>
+                        <li><a href="#iac">Infrastructure as Code</a></li>
+                        <li><a href="#shell">Shell Scripts</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#templates">Template Library</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#github" target="_blank">GitHub</a></li>
+                        <li><a href="#discord" target="_blank">Discord</a></li>
+                        <li><a href="#twitter" target="_blank">Twitter</a></li>
+                        <li><a href="#blog" target="_blank">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 DevOps Automation Suite. Built for developers and system administrators.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
